@@ -24,9 +24,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export async function generateStaticParams() {
@@ -36,7 +36,7 @@ export async function generateStaticParams() {
 }
 
 const ProjectDetails = async ({ params }: Props) => {
-  const { id } = params;
+  const { id } = await params;
   const project = projectsData.find((p) => p.id === parseInt(id));
 
   if (!project) {

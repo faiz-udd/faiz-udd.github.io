@@ -160,7 +160,9 @@ function ContactSection() {
                       icon: FaFacebook,
                       color: "#1877f2",
                     },
-                  ].map((social, idx) => (
+                  ]
+                    .filter((social) => Boolean(social.href))
+                    .map((social, idx) => (
                     <Link
                       key={idx}
                       href={social.href}
@@ -175,7 +177,7 @@ function ContactSection() {
                   ))}
                 </div>
               </div>
-            </SectionReveal>
+            </SectionReveal>                                                                                                
           </div>
         </div>
       </div>

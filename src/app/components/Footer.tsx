@@ -6,6 +6,16 @@ import Link from "next/link";
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
+const socialLinks = [
+  { href: personalData.github, Icon: FaGithub, key: "github" },
+  { href: personalData.linkedIn, Icon: FaLinkedin, key: "linkedin" },
+  { href: personalData.twitter, Icon: FaTwitter, key: "twitter" },
+  { href: personalData.Instagram, Icon: FaInstagram, key: "instagram" },
+].filter(
+  (social): social is { href: string; Icon: typeof FaGithub; key: string } =>
+    typeof social.href === "string" && social.href.trim().length > 0,
+);
+
 const Footer = () => (
   <footer className="bg-[#050505] border-t border-white/5 text-gray-200">
     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -76,34 +86,16 @@ const Footer = () => (
           </div>
 
           <div className="flex space-x-4">
-            <Link
-              href={personalData.github}
-              target="_blank"
-              className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
-            >
-              <FaGithub size={20} />
-            </Link>
-            <Link
-              href={personalData.linkedIn}
-              target="_blank"
-              className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
-            >
-              <FaLinkedin size={20} />
-            </Link>
-            <Link
-              href={personalData.twitter}
-              target="_blank"
-              className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
-            >
-              <FaTwitter size={20} />
-            </Link>
-            <Link
-              href={personalData.Instagram}
-              target="_blank"
-              className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
-            >
-              <FaInstagram size={20} />
-            </Link>
+            {socialLinks.map(({ href, Icon, key }) => (
+              <Link
+                key={key}
+                href={href}
+                target="_blank"
+                className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
+              >
+                <Icon size={20} />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -16,6 +16,15 @@ const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const designationRef = useRef<HTMLElement>(null);
   const codeCardRef = useRef<HTMLDivElement>(null);
+  const socialLinks = [
+    { href: personalData.github, Icon: BsGithub, key: "github" },
+    { href: personalData.linkedIn, Icon: BsLinkedin, key: "linkedin" },
+    { href: personalData.leetcode, Icon: SiLeetcode, key: "leetcode" },
+    { href: personalData.twitter, Icon: FaTwitterSquare, key: "twitter" },
+  ].filter(
+    (social): social is { href: string; Icon: typeof BsGithub; key: string } =>
+      typeof social.href === "string" && social.href.trim().length > 0,
+  );
 
   useGSAP(
     () => {
@@ -144,34 +153,16 @@ const HeroSection = () => {
 
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <Link
-                href={personalData.github}
-                target="_blank"
-                className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
-              >
-                <BsGithub size={24} />
-              </Link>
-              <Link
-                href={personalData.linkedIn}
-                target="_blank"
-                className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
-              >
-                <BsLinkedin size={24} />
-              </Link>
-              <Link
-                href={personalData.leetcode}
-                target="_blank"
-                className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
-              >
-                <SiLeetcode size={24} />
-              </Link>
-              <Link
-                href={personalData.twitter}
-                target="_blank"
-                className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
-              >
-                <FaTwitterSquare size={24} />
-              </Link>
+              {socialLinks.map(({ href, Icon, key }) => (
+                <Link
+                  key={key}
+                  href={href}
+                  target="_blank"
+                  className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
+                >
+                  <Icon size={24} />
+                </Link>
+              ))}
             </div>
 
             <div className="hero-cta flex flex-wrap gap-4">
@@ -251,7 +242,7 @@ const HeroSection = () => {
                     <p className="ml-4">
                       <span className="text-slate-200">skills:</span> [
                       <span className="text-red-300">
-                        'NextJS', 'GSAP', 'AI'
+                        'NestJS', 'React', 'AI'
                       </span>
                       ],
                     </p>

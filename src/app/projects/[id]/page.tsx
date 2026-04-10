@@ -24,11 +24,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: {
+    id: string;
+  };
 };
 
+export async function generateStaticParams() {
+  return projectsData.map((project) => ({
+    id: project.id.toString(),
+  }));
+}
+
 const ProjectDetails = async ({ params }: Props) => {
-  const { id } = await params;
+  const { id } = params;
   const project = projectsData.find((p) => p.id === parseInt(id));
 
   if (!project) {

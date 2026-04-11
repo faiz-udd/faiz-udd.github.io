@@ -1,12 +1,14 @@
 # faiz-udd.github.io
 Portfolio
 
-## GitHub Pages
+## Vercel
 
-This project is configured for static export to GitHub Pages.
+This project is configured for Vercel as a standard Next.js app.
 
-1. Push your changes to the `main` branch.
-2. GitHub Actions will build the app and publish the `out` folder.
-3. The workflow is defined in `.github/workflows/deploy.yml`.
+Use these deploy settings in Vercel:
 
-If you later deploy this repository under a subpath instead of a user site, you will need to add a `basePath` and `assetPrefix` in `next.config.ts`.
+1. Root Directory: `.`
+2. Framework Preset: `Next.js`
+3. Build Command: default or `next build`
+4. Output Directory: leave empty
+5. Install Command: `pnpm install --frozen-lockfile`

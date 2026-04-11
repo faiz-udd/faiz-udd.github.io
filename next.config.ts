@@ -4,14 +4,10 @@ import {
 } from "next/constants.js";
 
 /** @type {import("next").NextConfig} */
-const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
-
 const nextConfig = {
   reactStrictMode: true,
-  output: isGitHubActions ? "export" : undefined,
-  trailingSlash: true,
   images: {
-    unoptimized: isGitHubActions,
+    unoptimized: false,
   },
 } satisfies import("next").NextConfig;
 

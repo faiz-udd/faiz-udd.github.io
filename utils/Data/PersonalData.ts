@@ -1,19 +1,17 @@
 export const personalData = {
   name: "Faiz Uddin",
   profile: "/profile2.jpg",
-  designation: "Full-Stack ",
+  designation: "Full-Stack Developer",
   designationAlternateWords: [
-    "Developer.",
     "Engineer.",
     "Architect.",
     "Innovator.",
     "Designer.",
     "Thinker.",
     "Creator.",
-
   ],
   description:
-    "I’m Faiz Uddin, a results-driven Full-Stack Software Engineer with hands-on experience building scalable, end-to-end SaaS applications. I specialize in modern web technologies including React.js, Nest.js, and Node.js, with strong expertise in designing secure APIs and efficient database architectures using MongoDB and PostgreSQL. I have developed and deployed full-stack solutions integrating payment systems, AI features, and third-party services. Passionate about building user-focused products, I continuously explore emerging technologies to deliver high-performance, maintainable, and scalable systems. Beyond tech, I have a strong passion for content creation, philosophy, and book reading, which shapes my perspective and creativity.",
+  "I'm Faiz Uddin, a Full-Stack Developer with 2+ years of experience building and shipping production SaaS applications. I work primarily with React.js, React Native, NestJS, and MongoDB, and I've delivered projects end-to-end — from system design and API architecture to payment integration (Stripe, PayNow) and production deployment. Most recently I've been working with OpenAI and MCP servers to build context-aware AI features, including a live financial advisory system that analyses user data and stock prices to generate personalised insights. I care about writing clean, maintainable code and building things that actually work in production — not just in demos.",
   email: "faizu6639@gmail.com",
   phone: "+923447276041",
   address: "Islamabad",
@@ -27,8 +25,6 @@ export const personalData = {
   devUsername: "Dev Experience",
   leetcode: "https://leetcode.com/u/faizu6639/",
   resume:
-    "https://drive.google.com/file/d/18XSwDDT-FzbiXrxjpt88l9cSuoCQEtXl/view?usp=sharing",
+    "https://drive.google.com/file/d/1ny1SLrrLKR7sGpb1aTf9rsND1Xk4hSze/view?usp=sharing",
 };
-
-
 

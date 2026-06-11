@@ -9,7 +9,7 @@ export const projectsData = [
     code: "",
     demo: "https://mycashcanvas.com",
     date: "",
-    images: ["/placeholder/placeholder.png"],
+    images: ["/projects/mycashcanvas/576_Cash Canvas-01.jpg"],
     videos: [""],
     highlights: [
       "Built a clean, conversion-focused landing experience for the product.",
@@ -30,7 +30,7 @@ export const projectsData = [
     code: "",
     demo: "https://littlelet.com",
     date: "",
-    images: ["/placeholder/placeholder.png"],
+    images: ["/projects/littlelet/image.png"],
     videos: [""],
     highlights: [
       "Created a polished product showcase experience.",
@@ -51,7 +51,7 @@ export const projectsData = [
     code: "",
     demo: "https://emoyenmed.com",
     date: "",
-    images: ["/placeholder/placeholder.png"],
+    images: ["/projects/emoyen/icon.png"],
     videos: [""],
     highlights: [
       "Delivered a clean and professional public-facing interface.",

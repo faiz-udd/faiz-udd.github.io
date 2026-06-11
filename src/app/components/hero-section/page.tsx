@@ -242,7 +242,7 @@ const HeroSection = () => {
                     <p className="ml-4">
                       <span className="text-slate-200">skills:</span> [
                       <span className="text-red-300">
-                        'NestJS', 'React', 'AI'
+                        'React Native', NestJS', 'React', 'TypeScript'
                       </span>
                       ],
                     </p>
